@@ -90,7 +90,7 @@
 
   <script>
     function loadStatus(id, elementId) {
-     fetch("https://amandagillet2708-del.github.io/statusseite/proxy.php?url=" 
+   fetch("https://statusseite.vercel.app/api/proxy?url="
       + encodeURIComponent("https://api.comdesk.de/v1000/json/ACD/Agents/" + id + "/Status"))
 
         .then(r => r.json())
