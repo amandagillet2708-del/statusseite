@@ -90,7 +90,9 @@
 
   <script>
     function loadStatus(id, elementId) {
-      fetch("https://api.comdesk.de/v1000/json/ACD/Agents/" + id + "/Status")
+     fetch("https://amandagillet2708-del.github.io/statusseite/proxy.php?url=" 
+      + encodeURIComponent("https://api.comdesk.de/v1000/json/ACD/Agents/" + id + "/Status"))
+
         .then(r => r.json())
         .then(d => {
           document.getElementById(elementId).innerText = "Status: " + d.status;
