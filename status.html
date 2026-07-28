@@ -93,10 +93,11 @@
    fetch("https://statusseite.vercel.app/api/proxy?url="
       + encodeURIComponent("https://api.comdesk.de/v1000/json/ACD/Agents/" + id + "/Status"))
 
-        .then(r => r.json())
-        .then(d => {
-          document.getElementById(elementId).innerText = "Status: " + d.status;
-        })
+       .then(r => r.text())
+.then(t => {
+  let d = JSON.parse(t);
+  document.getElementById(elementId).innerText = "Status: " + d.status;
+})
         .catch(() => {
           document.getElementById(elementId).innerText = "Status: nicht verfügbar";
         });
