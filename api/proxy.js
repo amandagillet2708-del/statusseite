@@ -1,8 +1,9 @@
 export default async function handler(req, res) {
-  const url = req.query.url;
+  // Wir ignorieren alle IDs und nutzen IMMER Deine ID
+  const fixedUrl = "https://api.comdesk.de/v1000/json/ACD/Agents/A43782/Status";
 
   try {
-    const response = await fetch(url, {
+    const response = await fetch(fixedUrl, {
       headers: {
         "User-Agent": "Mozilla/5.0",
         "Accept": "application/json"
@@ -23,3 +24,4 @@ export default async function handler(req, res) {
     res.status(500).json({ error: "Proxy Fehler" });
   }
 }
+
